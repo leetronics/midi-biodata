@@ -12,4 +12,4 @@ Here you find the hardware and enclosure design files for the MIDI Biodata Sonif
 
 The hardware design and firmware is based on the work of electricityforprogress and thus licensed under the MIT license.
 
-The enclosure design is however licensed under CC0 (public domain), except for the logo which is under copyright of DipthDesign. For private use, anyone is free to print the enclosure without permission. Please ask for permission before using it commercially in any way. 
+The enclosure design is however licensed under CC0 (public domain), except for the logo which is under copyright of [DipthDesign](https://www.dipth.de). For private use, anyone is free to print the enclosure with logo and without permission.
