@@ -1,0 +1,33 @@
+### Module positions - created on Thu Mar 14 00:49:54 2019 ###
+### Printed by Pcbnew version kicad 4.0.7-e2-6376~61~ubuntu18.04.1
+## Unit = mm, Angle = deg.
+## Side : top
+# Ref     Val                                         Package                                          PosX       PosY       Rot  Side
+          Fiducial_1mm_Dia_2.54mm_Outer_CopperTop     Fiducial_1mm_Dia_2.54mm_Outer_CopperTop        2.9210    43.0530    0.0000  top
+C6        100nF                                       C_0805                                        21.9710    35.3060   90.0000  top
+C7        100nF                                       C_0805                                        54.4830    41.0210  180.0000  top
+C8        1uF                                         C_0805                                        50.6730    41.0210    0.0000  top
+D1        D                                           D_1206                                        53.7210    23.1140  270.0000  top
+          Fiducial_1mm_Dia_2.54mm_Outer_CopperBottom  Fiducial_1mm_Dia_2.54mm_Outer_CopperBottom     5.4610     4.4450    0.0000  top
+          Fiducial_1mm_Dia_2.54mm_Outer_CopperBottom  Fiducial_1mm_Dia_2.54mm_Outer_CopperBottom     2.9210    43.0530    0.0000  top
+          Fiducial_1mm_Dia_2.54mm_Outer_CopperBottom  Fiducial_1mm_Dia_2.54mm_Outer_CopperBottom    60.4520    42.5450    0.0000  top
+          Fiducial_1mm_Dia_2.54mm_Outer_CopperBottom  Fiducial_1mm_Dia_2.54mm_Outer_CopperBottom    60.7060     3.1750    0.0000  top
+C1        100nF                                       C_1206                                        33.5280     8.7630   90.0000  top
+C2        100nF                                       C_1206                                        43.0530    38.8620  270.0000  top
+C3        4,7nF                                       C_1206                                        38.1000     2.5400    0.0000  top
+C4        100nF                                       C_1206                                        28.5750    21.8440   90.0000  top
+D8        D_TVS                                       D_0805                                        55.3720    16.3830   90.0000  top
+          Fiducial_1mm_Dia_2.54mm_Outer_CopperTop     Fiducial_1mm_Dia_2.54mm_Outer_CopperTop        2.9210     2.6670    0.0000  top
+          Fiducial_1mm_Dia_2.54mm_Outer_CopperTop     Fiducial_1mm_Dia_2.54mm_Outer_CopperTop       60.7060     3.1750    0.0000  top
+          Fiducial_1mm_Dia_2.54mm_Outer_CopperTop     Fiducial_1mm_Dia_2.54mm_Outer_CopperTop       60.4520    42.5450    0.0000  top
+D9        D_TVS                                       D_0805                                        60.4520    16.3830  270.0000  top
+R1        220R                                        R_1206                                        24.3840    21.9710   90.0000  top
+R2        220R                                        R_1206                                        32.5120     3.6830  180.0000  top
+R3        220R                                        R_1206                                        21.8440    17.9070  180.0000  top
+R5        10K                                         R_0805                                        19.6850    35.4330  270.0000  top
+R6        100K                                        R_1206                                        37.8460    15.3670    0.0000  top
+R7        3,9K                                        R_1206                                        40.6400    38.8620  270.0000  top
+RN1       R_Pack04                                    R_Array_Concave_4x0603                        37.5920    29.5910    0.0000  top
+U1        ATMEGA328P-AU                               TQFP-32_7x7mm_Pitch0.8mm                      28.9560    30.0990   90.0000  top
+Y1        Crystal_GND2                                murata-cstce                                  32.0040    22.9870    0.0000  top
+## End

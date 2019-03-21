@@ -1,0 +1,16 @@
+### Module positions - created on Thu Mar 14 00:49:54 2019 ###
+### Printed by Pcbnew version kicad 4.0.7-e2-6376~61~ubuntu18.04.1
+## Unit = mm, Angle = deg.
+## Side : bottom
+# Ref     Val         Package                      PosX       PosY       Rot  Side
+D2        LED_WHITE   LED_1206_HandSoldering     9.6520    22.9870   90.0000  bottom
+D3        LED_BLUE    LED_1206_HandSoldering    25.4000    22.9870   90.0000  bottom
+D4        LED_GREEN   LED_1206_HandSoldering    34.5440    22.9870   90.0000  bottom
+D5        LED_YELLOW  LED_1206_HandSoldering    43.6880    22.9870   90.0000  bottom
+D6        LED_RED     LED_1206_HandSoldering    51.8160    22.9870   90.0000  bottom
+D7        LED_RED     LED_1206_HandSoldering    31.4960     3.8100  180.0000  bottom
+FID1      FID1        FIDUCIAL                   5.4610     4.4450    0.0000  bottom
+FID2      FID2        FIDUCIAL                   2.9210    43.0530    0.0000  bottom
+FID3      FID3        FIDUCIAL                   60.4520    42.5450    0.0000  bottom
+FID4      FID4        FIDUCIAL                   60.7060     3.1750    0.0000  bottom
+## End
