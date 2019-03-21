@@ -10,5 +10,6 @@ Here you find the hardware and enclosure design files for the MIDI Biodata Sonif
   - MIDI_Psychogalv_328p_13-37.org_v2.0: firmware for MIDI Biodata Sonification Device by 13-37.org electronics
 - kicad: hardware design as KiCAD project and Gerber files
 
-The hardware design and firmware is based on the work of https://github.com/electricityforprogress/MIDIsprout and thus licensed under the MIT license.
-The enclosure design is licensed under CC0 (public domain), except for the logo which is under copyright of DipthDesign.
+The hardware design and firmware is based on the work of electricityforprogress and thus licensed under the MIT license.
+
+The enclosure design is however licensed under CC0 (public domain), except for the logo which is under copyright of [DipthDesign](https://www.dipth.de). For private use, anyone is free to print the enclosure with logo and without permission.
