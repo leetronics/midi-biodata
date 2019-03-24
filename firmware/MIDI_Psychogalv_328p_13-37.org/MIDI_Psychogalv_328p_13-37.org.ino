@@ -82,16 +82,6 @@ unsigned long menuTimeout = 5000; //5 seconds timeout in menu mode
 
 #define LED_NUM 6
 
-/*LEDFader leds[LED_NUM] = { // 6 LEDs (perhaps 2 RGB LEDs)
-  // reverted order for v2.0 devices. fixed in 2.1  
-  LEDFader(10),
-  LEDFader(9),
-  LEDFader(6),
-  LEDFader(5),
-  LEDFader(3),
-  LEDFader(11) //Control Voltage output or controlLED
-};*/
-
 LEDFader leds[LED_NUM] = { // 6 LEDs (perhaps 2 RGB LEDs)
   LEDFader(3),
   LEDFader(5),
@@ -101,7 +91,6 @@ LEDFader leds[LED_NUM] = { // 6 LEDs (perhaps 2 RGB LEDs)
   LEDFader(11)  //Control Voltage output or controlLED
 };
 
-//int ledNums[LED_NUM] = {11,10,9,6,5,3};
 int ledNums[LED_NUM] = {3, 5, 6, 9, 10, 11};
 byte controlLED = 5; //array index of control LED (CV out)
 byte noteLEDs = 1;  //performs lightshow set at noteOn event
@@ -174,12 +163,12 @@ void loop()
   checkControl();  //update control value
   checkLED();  //LED management without delay()
 
-  if ((currentMillis - buttonPressed ) < 100) {  
+  if ((currentMillis - buttonPressed ) < 100) {
     checkButton();
   }
 
   if (currMenu > 0) {
-      checkMenu(); //allow main loop by checking current menu mode, and updating millis
+    checkMenu(); //allow main loop by checking current menu mode, and updating millis
   }
 }
 
@@ -189,10 +178,10 @@ void checkButton() {
     delay(BUTTON_DEBOUNCE);
     if (digitalRead(buttonPin) == LOW) {
       noteLEDs = 0; //turn off normal light show for menu modes
-       for (byte j = 0; j < LED_NUM; j++) {
-         leds[j].stop_fade();  //off LEDs
-         leds[j].set_value(0);
-        }
+      for (byte j = 0; j < LED_NUM; j++) {
+        leds[j].stop_fade();  //off LEDs
+        leds[j].set_value(0);
+      }
       delay(250);
       switch (currMenu) {
         case 0: //this is the main sprout program
@@ -320,14 +309,12 @@ void setNote(int value, int velocity, long duration, int notechannel) {
       noteArray[i].duration = currentMillis + duration;
       noteArray[i].channel = notechannel;
 
-
       if (QY8) {
         midiSerial(144, notechannel, value, velocity);
       }
       else {
         midiSerial(144, channel, value, velocity);
       }
-
 
       if (noteLEDs == 1) { //normal mode
         for (byte j = 0; j < (LED_NUM - 1); j++) { //find available LED and set
@@ -676,31 +663,39 @@ void scaleMode() {
   leds[prevValue].set_value(0);
   leds[currScale].stop_fade();
   leds[currScale].set_value(0);
+}
 
+void displayChannel(int channel) {
+   // update LEDs to indicate current channel (with 5-bit using the LEDs: R-Y-G-B-W/1-2-4-8-16)
+   for (byte i = 0; i < 5; i++) {
+        digitalWrite(ledNums[i], channel & 1);
+        channel /= 2;
+      }
 }
 
 void channelMode() {
   int runMode = 1;
+  int prevChannel = channel;
   while (runMode) {
     channel = analogRead(knobPin);
     //set current MIDI Channel between 1 and 16
-    channel = map(channel, knobMin, knobMax, 1, 17);
-
-    pulse(value, maxBrightness, (pulseRate / 4)); //pulse for current menu
-
-    checkLED();
+    if (prevChannel != channel) {
+      channel = map(channel, knobMin, knobMax, 1, 17);
+      displayChannel(channel);
+    }
     if (index >= samplesize)  {
       analyzeSample();  //keep samples running
     }
     checkNote();  //turn off expired notes
     checkControl();  //update control value
     runMode = checkButtonToExitMenu();
-  }  //after button press retain threshold setting
+  }  //after button press retain channel setting
   EEPROM_writeAnything(5, channel); // MIDI channel default value
   currMenu = 0; //return to main program
   noteLEDs = 1; //normal light show
-  leds[prevValue].stop_fade();
-  leds[prevValue].set_value(0);
+  for (int i =0; i<5;i++) {
+    digitalWrite(ledNums[i], LOW);
+  }
 }
 
 void brightnessMode() {
